@@ -51,5 +51,10 @@ select * from tablaempleados where nombreEmpleado like "c%";
 select * from tablaempleados where nombreEmpleado like "%a";
 
 #9) : Encuentra a los empleados que no pertenecen al departamento de IT.
+select * from tablaempleados where DepartamentoEmpleado <> "Departamento de TI";
+
+# 10 ¿Quién es el empleado con el salario más alto?
+select max(salarioEmpleado) as "salario Maximo" from tablaempleados;
+
 
 
