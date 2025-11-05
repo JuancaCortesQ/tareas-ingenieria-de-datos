@@ -1,0 +1,49 @@
+//Esto es para ver la base de datos 
+show dbs
+
+// esto es para decirle que tiene que usar o para activar la base de datos
+use Carola
+
+//Esto es para mostrarla de nuevo
+show dbs
+
+// crear una coleccion de la base de datos
+db.createCollection("usuario")
+
+// para mostrar todas las colecciones de las bases de datos
+db.getCollectionInfos()
+
+// crear coleccion de productos
+db.createCollection("productos")
+
+db.getCollectionInfos()
+
+// db.getCollectionInfos es para consultar toda la base de datos mientras que el dn.createCollection("Nombre") es para crear una coleccion
+
+//Con el db.help le pido ayuda y me da los metodos que tenemos
+db.help
+
+//insertar documentos en la coleccion de usuarios
+// es para un solo atributo
+
+db.usuario.insertOne({idUsuario:123, nombreusuario:"Juan Camilo", edad:35, ciudad:"bogota", correo:"camillooocq098@gmail.com"})
+
+//crear e insertar muchos documentos
+
+db.usuario.insertMany([{idUsuario:123, nombreusuario:"Juan Camilo", edad:35, ciudad:"bogota", correo:"camillooocq098@gmail.com"},{idUsuario:12, nombreusuario:"Juan Carlos", edad:35, ciudad:"bogota", correo:"camillooocq098@gmail.com"}])
+
+// consultar todos los documentos de la coleccion usuario
+db.usuario.find()
+
+//consultar condiciones especificas
+db.usuario.find({idUsuario:12})
+
+//Consultar varias condiciones especificas
+db.usuario.find({idUsuario:12},{ciudad:"bogota"})
+
+// Para consultar algo un solo valor en especificos
+db.usuario.findOne({nombreusuario:"Juan Carlos"})
+
+// Para revisar que el se vea todo lo que hay en la coleccion de forma mas linda se usa
+db.usuario.findOne({nombreusuario:"Juan Camil"})
+
